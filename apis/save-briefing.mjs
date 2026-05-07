@@ -20,5 +20,5 @@ const latestFile = join(runsDir, 'latest.json');
 await writeFile(runFile, json, 'utf8');
 await writeFile(latestFile, json, 'utf8');
 
-console.error(`[Crucix] Saved UTF-8 briefing to ${runFile}`);
+console.error(`[PhantomGraph] Saved UTF-8 briefing to ${runFile}`);
 console.log(json);
