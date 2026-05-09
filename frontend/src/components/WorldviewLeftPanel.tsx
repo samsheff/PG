@@ -690,7 +690,7 @@ const WorldviewLeftPanel = React.memo(function WorldviewLeftPanel({
   // layer, remembers the choice, and auto-detects server-side Mode B.
   const [sarChoice, setSarChoice] = useState<import('./SarModeChooserModal').SarChoice>(() => {
     try {
-      const stored = localStorage.getItem('shadowbroker_sar_mode_choice');
+      const stored = localStorage.getItem('phantomgraph_sar_mode_choice');
       if (stored === 'a_only' || stored === 'b_active') return stored;
     } catch {
       // localStorage unavailable
@@ -717,14 +717,14 @@ const WorldviewLeftPanel = React.memo(function WorldviewLeftPanel({
         if (cancelled) return;
         if (modeBOn && sarChoice !== 'b_active') {
           try {
-            localStorage.setItem('shadowbroker_sar_mode_choice', 'b_active');
+            localStorage.setItem('phantomgraph_sar_mode_choice', 'b_active');
           } catch {
             // ignore
           }
           setSarChoice('b_active');
         } else if (!modeBOn && sarChoice === 'b_active') {
           try {
-            localStorage.removeItem('shadowbroker_sar_mode_choice');
+            localStorage.removeItem('phantomgraph_sar_mode_choice');
           } catch {
             // ignore
           }

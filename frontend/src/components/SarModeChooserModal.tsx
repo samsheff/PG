@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Radar, Check, Zap, Globe } from 'lucide-react';
 import { API_BASE } from '@/lib/api';
 
-export const SAR_CHOICE_KEY = 'shadowbroker_sar_mode_choice';
+export const SAR_CHOICE_KEY = 'phantomgraph_sar_mode_choice';
 export type SarChoice = 'a_only' | 'b_active' | null;
 
 interface SarModeChooserModalProps {

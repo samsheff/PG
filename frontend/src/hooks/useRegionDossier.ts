@@ -88,7 +88,7 @@ async function reverseGeocode(lat: number, lng: number) {
     `https://nominatim.openstreetmap.org/reverse?` +
     `lat=${lat}&lon=${lng}&format=json&zoom=10&addressdetails=1&accept-language=en`;
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'ShadowBroker-OSINT/1.0 (live-risk-dashboard)' },
+    headers: { 'User-Agent': 'PhantomGraph-OSINT/1.0 (live-risk-dashboard)' },
   });
   if (!res.ok) throw new Error(`Nominatim HTTP ${res.status}`);
   const data = await res.json();

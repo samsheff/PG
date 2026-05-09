@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 const CURRENT_VERSION = '0.9.75';
-const STORAGE_KEY = `shadowbroker_changelog_v${CURRENT_VERSION}`;
+const STORAGE_KEY = `phantomgraph_changelog_v${CURRENT_VERSION}`;
 const RELEASE_TITLE = 'Onboarding, Live Feeds, Mesh, and Agent Hardening';
 
 const HEADLINE_FEATURES = [

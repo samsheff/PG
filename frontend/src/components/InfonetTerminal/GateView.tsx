@@ -923,7 +923,7 @@ export default function GateView({
             LOGGED IN AS:{' '}
             <span
               className={
-                persona === 'shadowbroker' ? 'text-red-500 animate-pulse font-bold' : 'text-green-400'
+                persona === 'phantomgraph' ? 'text-red-500 animate-pulse font-bold' : 'text-green-400'
               }
             >
               {persona}
@@ -1040,7 +1040,7 @@ export default function GateView({
             <div className="text-xs mb-1 text-gray-500">
               Posted by:{' '}
               <span className="text-red-500 font-bold animate-pulse drop-shadow-[0_0_5px_rgba(239,68,68,0.8)]">
-                shadowbroker
+                phantomgraph
               </span>
               <span className="text-gray-600 ml-2">PINNED</span>
             </div>

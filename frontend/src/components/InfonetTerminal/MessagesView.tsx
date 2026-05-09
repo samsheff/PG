@@ -165,7 +165,7 @@ const FOLDERS: Array<{ key: MailFolder; label: string; icon: React.ReactNode }> 
 
 const MAIL_POLL_BASE_MS = 12_000;
 const STORAGE_VERSION = 1;
-const SHADOWBROKER_WELCOME_ID = 'shadowbroker-welcome';
+const PHANTOMGRAPH_WELCOME_ID = 'phantomgraph-welcome';
 const MAIL_SUBJECT_PREFIX = 'MAIL_SUBJECT:';
 
 function randomId(prefix: string): string {
@@ -188,14 +188,14 @@ function sortMessages(items: MailItem[]): MailItem[] {
   });
 }
 
-function createShadowbrokerWelcomeMail(): MailItem {
+function createPhantomgraphWelcomeMail(): MailItem {
   return {
-    id: SHADOWBROKER_WELCOME_ID,
-    msgId: SHADOWBROKER_WELCOME_ID,
+    id: PHANTOMGRAPH_WELCOME_ID,
+    msgId: PHANTOMGRAPH_WELCOME_ID,
     folder: 'inbox',
     kind: 'system',
     direction: 'local',
-    senderId: 'shadowbroker',
+    senderId: 'phantomgraph',
     recipientId: 'local',
     subject: 'How secure mail works',
     body: [
@@ -215,10 +215,10 @@ function createShadowbrokerWelcomeMail(): MailItem {
 }
 
 function ensureSeedMail(items: MailItem[]): MailItem[] {
-  if (items.some((item) => item.id === SHADOWBROKER_WELCOME_ID)) {
+  if (items.some((item) => item.id === PHANTOMGRAPH_WELCOME_ID)) {
     return sortMessages(items);
   }
-  return sortMessages([createShadowbrokerWelcomeMail(), ...items]);
+  return sortMessages([createPhantomgraphWelcomeMail(), ...items]);
 }
 
 function loadMailbox(scopeId: string): MailItem[] {
@@ -278,7 +278,7 @@ function decodeMailPayload(plaintext: string): { subject: string; body: string }
 
 function displayNameForPeer(peerId: string, contacts: Record<string, Contact>): string {
   if (!peerId) return 'unknown';
-  if (peerId === 'shadowbroker') return 'shadowbroker';
+  if (peerId === 'phantomgraph') return 'phantomgraph';
   const contact = contacts[peerId];
   if (contact?.alias) return contact.alias;
   return peerId;
@@ -1838,7 +1838,7 @@ export default function MessagesView({ onBack, onOpenDeadDrop }: MessagesViewPro
   );
 
   const handleReply = useCallback((mail: MailItem) => {
-    if (!mail.senderId || mail.senderId === 'shadowbroker' || mail.senderId === 'system') {
+    if (!mail.senderId || mail.senderId === 'phantomgraph' || mail.senderId === 'system') {
       return;
     }
     setDraft({
@@ -2041,7 +2041,7 @@ export default function MessagesView({ onBack, onOpenDeadDrop }: MessagesViewPro
                   )}
 
                   <div className="mt-6 flex flex-wrap gap-3">
-                    {selectedMessage.kind === 'mail' && selectedMessage.senderId !== 'shadowbroker' && (
+                    {selectedMessage.kind === 'mail' && selectedMessage.senderId !== 'phantomgraph' && (
                       <button
                         onClick={() => handleReply(selectedMessage)}
                         className="px-4 py-2 border border-cyan-500/40 bg-cyan-950/20 text-cyan-300 text-xs tracking-[0.18em] uppercase flex items-center"

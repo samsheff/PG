@@ -286,7 +286,7 @@ export default function InfonetShell({
               {' '}
               for a rotating obfuscated session that opens the room under a fresh gate-scoped key.
               {' '}
-              <span className="text-red-400">&apos;shadowbroker&apos; is reserved.</span>
+              <span className="text-red-400">&apos;phantomgraph&apos; is reserved.</span>
             </span>
           )
         }]);
@@ -357,8 +357,8 @@ export default function InfonetShell({
     if (trimmedCmd === '') return;
 
     if (inputMode === 'persona') {
-      if (trimmedCmd === 'shadowbroker') {
-        output = <span className="text-red-500 font-bold animate-pulse">ERR: Persona &apos;shadowbroker&apos; is reserved and cannot be claimed.</span>;
+      if (trimmedCmd === 'phantomgraph') {
+        output = <span className="text-red-500 font-bold animate-pulse">ERR: Persona &apos;phantomgraph&apos; is reserved and cannot be claimed.</span>;
         setHistory(prev => [...prev, { command: cmd, output }]);
         return;
       }

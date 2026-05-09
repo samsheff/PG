@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Key, Shield, Radar, Globe, Satellite, Ship, Radio, Bot, Copy, Check, Network } from 'lucide-react';
 
 const CURRENT_ONBOARDING_VERSION = '0.9.75-agentic-onboarding-1';
-const STORAGE_KEY = `shadowbroker_onboarding_complete_v${CURRENT_ONBOARDING_VERSION}`;
-const LEGACY_STORAGE_KEY = 'shadowbroker_onboarding_complete';
+const STORAGE_KEY = `phantomgraph_onboarding_complete_v${CURRENT_ONBOARDING_VERSION}`;
+const LEGACY_STORAGE_KEY = 'phantomgraph_onboarding_complete';
 
 const API_GUIDES = [
   {

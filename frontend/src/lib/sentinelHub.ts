@@ -3,7 +3,7 @@
  *
  * Credentials are stored in browser-controlled storage only. In privacy/session
  * mode they stay session-scoped; otherwise they persist in local storage. Token
- * exchange is proxied through the ShadowBroker backend (/api/sentinel/token) to
+ * exchange is proxied through the PhantomGraph backend (/api/sentinel/token) to
  * avoid CORS blocks from the Copernicus identity provider. Credentials are
  * forwarded, never stored server-side.
  *

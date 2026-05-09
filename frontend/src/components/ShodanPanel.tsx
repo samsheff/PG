@@ -386,8 +386,8 @@ export default function ShodanPanel({
 
   const exportPresets = useCallback(() => {
     downloadText(
-      `shadowbroker-shodan-presets-${new Date().toISOString().slice(0, 10)}.json`,
-      JSON.stringify({ source: 'ShadowBroker', type: 'shodan-presets', presets }, null, 2),
+      `phantomgraph-shodan-presets-${new Date().toISOString().slice(0, 10)}.json`,
+      JSON.stringify({ source: 'PhantomGraph', type: 'shodan-presets', presets }, null, 2),
     );
   }, [presets]);
 
@@ -424,7 +424,7 @@ export default function ShodanPanel({
   const exportResultsJson = useCallback(() => {
     if (!currentResults.length) return;
     downloadText(
-      `shadowbroker-shodan-results-${new Date().toISOString().replace(/[:.]/g, '-')}.json`,
+      `phantomgraph-shodan-results-${new Date().toISOString().replace(/[:.]/g, '-')}.json`,
       JSON.stringify(
         {
           source: 'Shodan',
@@ -441,7 +441,7 @@ export default function ShodanPanel({
   const exportResultsCsv = useCallback(() => {
     if (!currentResults.length) return;
     downloadText(
-      `shadowbroker-shodan-results-${new Date().toISOString().replace(/[:.]/g, '-')}.csv`,
+      `phantomgraph-shodan-results-${new Date().toISOString().replace(/[:.]/g, '-')}.csv`,
       buildCsv(currentResults),
       'text/csv',
     );

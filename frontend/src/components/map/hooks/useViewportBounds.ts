@@ -12,7 +12,7 @@ import {
 const VIEWPORT_POST_DEBOUNCE_MS = 2500;
 const VIEWPORT_POST_MIN_INTERVAL_MS = 12000;
 const VIEWPORT_CHANGE_EPSILON = 1.5;
-export const VIEWPORT_COMMITTED_EVENT = 'shadowbroker:viewport-committed';
+export const VIEWPORT_COMMITTED_EVENT = 'phantomgraph:viewport-committed';
 
 function boundsChanged(a: ViewBounds | null, b: ViewBounds): boolean {
   if (!a) return true;
